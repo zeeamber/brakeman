@@ -81,9 +81,11 @@ class Brakeman::Report::Text < Brakeman::Report::Base
     warning_types = warnings_summary
     warning_types.delete :high_confidence
 
-    warning_types.sort_by { |t, c| t }.map do |type, count|
+    warning_types = warning_types.sort_by { |t, c| t }.map do |type, count|
       label(type, count)
-    end.unshift(header('Warning Types'))
+    end
+    warning_types.unshift(header('Warning Types')) if !warning_types.empty?
+    warning_types
   end
 
   def generate_warnings
