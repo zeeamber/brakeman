@@ -84,7 +84,7 @@ class Brakeman::Report::Text < Brakeman::Report::Base
     warning_types = warning_types.sort_by { |t, c| t }.map do |type, count|
       label(type, count)
     end
-    warning_types.unshift(header('Warning Types')) if !warning_types.blank?
+    warning_types.unshift(header('Warning Types')) if !warning_types.empty?
     warning_types
   end
 
