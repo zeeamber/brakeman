@@ -56,8 +56,7 @@ class Brakeman::Report::Text < Brakeman::Report::Base
       label("Rails Version", rails_version),
       label("Brakeman Version", Brakeman::Version),
       label("Scan Date", tracker.start_time),
-      label("Duration", "#{tracker.duration} seconds"),
-      label("Checks Run", checks.checks_run.sort.join(", "))
+      label("Duration", "#{tracker.duration} seconds")
     ]
   end
 
