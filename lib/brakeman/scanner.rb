@@ -167,13 +167,13 @@ class Brakeman::Scanner
       gem_files[:gemfile] = { :src => parse_ruby_file(file), :file => file }
     end
 
-    if @app_tree.exists? "Gemfile.lock"
-      file = @app_tree.file_path("Gemfile.lock")
-      gem_files[:gemlock] = { :src => file.read, :file => file }
-    elsif @app_tree.exists? "gems.locked"
-      file = @app_tree.file_path("gems.locked")
-      gem_files[:gemlock] = { :src => file.read, :file => file }
-    end
+    # if @app_tree.exists? "Gemfile.lock"
+    #   file = @app_tree.file_path("Gemfile.lock")
+    #   gem_files[:gemlock] = { :src => file.read, :file => file }
+    # elsif @app_tree.exists? "gems.locked"
+    #   file = @app_tree.file_path("gems.locked")
+    #   gem_files[:gemlock] = { :src => file.read, :file => file }
+    # end
 
     if @app_tree.gemspec
       gem_files[:gemspec] = { :src => parse_ruby_file(@app_tree.gemspec), :file => @app_tree.gemspec }
